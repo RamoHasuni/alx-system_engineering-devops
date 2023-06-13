@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s\n" $(echo "ibase=5; obase=10; $(echo $WATER | tr 'water' '01234') + $(echo $STIR | tr 'stir' '01234')" | bc) | tr '01234567' 'bestcholl'
+if printf "%s\n" $(echo "$WATER" | tr 'water' '01234') + $(echo "$STIR" | tr 'stir.' '01234') | grep -qE '^[0-9]+$'; then printf "%s\n" $(echo "$WATER" | tr 'water' '01234') + $(echo "$STIR" | tr 'stir.' '01234') | bc | tr '01234567' 'bestcholl'; fi
